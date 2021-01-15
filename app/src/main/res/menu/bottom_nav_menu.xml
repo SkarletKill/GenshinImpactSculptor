@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_characters"
+        android:icon="@drawable/ic_paimon_face"
+        android:title="@string/menu_characters" />
+
+    <item
+        android:id="@+id/navigation_weapons"
+        android:icon="@drawable/ic_weapons"
+        android:title="@string/menu_weapons" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/menu_dashboard" />
+
+    <item
+        android:id="@+id/navigation_artifacts"
+        android:icon="@drawable/ic_thundersoother"
+        android:title="@string/menu_artifacts" />
+
+    <item
+        android:id="@+id/navigation_advanced"
+        android:icon="@drawable/ic_anemoculus"
+        android:title="@string/menu_advanced" />
+
+</menu>

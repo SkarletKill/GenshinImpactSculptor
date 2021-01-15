@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Genshin Damage Boost</string>
+
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_characters">Characters</string>
+    <string name="menu_weapons">Weapons</string>
+    <string name="menu_artifacts">Artifacts</string>
+    <string name="menu_advanced">Advanced</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <include app:graph="@navigation/bottom_navigation" />
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="ua.skarlet.gis.ui.welcome.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/onPrimaryContentClick"
+            app:destination="@id/primaryActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/primaryActivity"
+        android:name="ua.skarlet.gis.ui.PrimaryActivity"
+        android:label="PrimaryActivity" />
+</navigation>
