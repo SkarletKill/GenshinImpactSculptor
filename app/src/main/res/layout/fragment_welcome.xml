@@ -1,20 +1,25 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="ua.skarlet.gis.ui.MainActivity">
+<!--
+  ~ Copyright (c) 2021 by Skarlet RED
+  -->
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="hello_blank_fragment" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonGoPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Open Primary screen" />
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello_blank_fragment" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/buttonGoPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Primary screen" />
+
+    </LinearLayout>
+</layout>

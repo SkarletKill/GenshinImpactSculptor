@@ -1,9 +1,17 @@
+<!--
+  ~ Copyright (c) 2021 by Skarlet RED
+  -->
+
 <resources>
     <string name="app_name">Genshin Damage Boost</string>
 
+    <!-- Bottom navigation -->
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_characters">Characters</string>
     <string name="menu_weapons">Weapons</string>
     <string name="menu_artifacts">Artifacts</string>
     <string name="menu_advanced">Advanced</string>
+
+    <!-- Welcome -->
+    <string name="welcome">Welcome</string>
 </resources>
