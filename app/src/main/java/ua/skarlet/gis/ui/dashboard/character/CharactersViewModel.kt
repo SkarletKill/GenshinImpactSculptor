@@ -4,14 +4,29 @@
 
 package ua.skarlet.gis.ui.dashboard.character
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import ua.skarlet.gis.data.Character
+import ua.skarlet.gis.data.enumeration.Element
 
 class CharactersViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Characters Fragment"
+    val characters = MutableLiveData<List<Character>>()
+
+    init {
+        characters.value = createCharacters()
     }
-    val text: LiveData<String> = _text
+
+    private fun createCharacters(): List<Character> {
+        val tartaglia = Character(
+            "Tartaglia",
+            80,
+            Element.HYDRO,
+            12182,
+            790,
+            757,
+            elementalDamageBonus = 28.8f
+        )
+        return listOf(tartaglia)
+    }
 }

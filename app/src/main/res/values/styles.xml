@@ -5,6 +5,14 @@
 
 <resources>
     <!-- Text -->
+    <style name="Text">
+        <item name="android:fontFamily">@font/garbata_regular</item>
+    </style>
+
+    <style name="Text.Subhead" parent="Text">
+        <item name="android:textSize">@dimen/text_subhead</item>
+    </style>
+
 
     <!-- View -->
 
