@@ -1,4 +1,8 @@
-package ua.skarlet.gis.ui.weapon
+/*
+ * Copyright (c) 2021 by Skarlet RED
+ */
+
+package ua.skarlet.gis.ui.dashboard.weapon
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +25,7 @@ class WeaponsFragment : Fragment() {
         weaponsViewModel =
                 ViewModelProvider(this).get(WeaponsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_weapons, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
+        val textView: TextView = root.findViewById(R.id.text_home)
         weaponsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
