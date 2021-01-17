@@ -4,18 +4,28 @@
 
 package ua.skarlet.gis.ui.dashboard.character
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import ua.skarlet.gis.data.Character
+import android.app.Application
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import ua.skarlet.gis.data.enumeration.Element
+import ua.skarlet.gis.db.character.Character
+import ua.skarlet.gis.repo.CharacterRepository
+import ua.skarlet.gis.ui.BaseViewModel
 
-class CharactersViewModel : ViewModel() {
+class CharactersViewModel(app: Application) : BaseViewModel(app) {
 
-    val characters = MutableLiveData<List<Character>>()
+    val repo = CharacterRepository(viewModelScope, db.characterDao())
 
-    init {
-        characters.value = createCharacters()
-    }
+    val characters: LiveData<List<Character>> = repo.getAll()
+
+//    init {
+//        val item = createCharacters()[0]
+//        characters.value?.let { items ->
+//            if (items.find { it.name == item.name } == null) {
+//                repo.insert(item)
+//            }
+//        }
+//    }
 
     private fun createCharacters(): List<Character> {
         val tartaglia = Character(
@@ -27,6 +37,19 @@ class CharactersViewModel : ViewModel() {
             757,
             elementalDamageBonus = 28.8f
         )
-        return listOf(tartaglia)
+        val ganyu = Character(
+            "Ganyu",
+            80,
+            Element.CRYO,
+            9108,
+            735,
+            586,
+            critDamage = 88.4f
+        )
+        return listOf(tartaglia, ganyu)
+    }
+
+    fun removeItem(position: Int) {
+        repo.delete(characters.value!![position])
     }
 }

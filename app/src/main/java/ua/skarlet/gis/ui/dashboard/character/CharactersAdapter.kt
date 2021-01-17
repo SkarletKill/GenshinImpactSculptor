@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.skarlet.gis.R
 import kotlinx.android.synthetic.main.item_view_character.view.*
-import ua.skarlet.gis.data.Character
+import ua.skarlet.gis.db.character.Character
 import ua.skarlet.gis.util.ext.createView
 
 class CharactersAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

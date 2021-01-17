@@ -10,8 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.skarlet.gis.R
 import kotlinx.android.synthetic.main.fragment_character.*
+import ua.skarlet.gis.util.SwipeToDeleteCallback
 
 class CharactersFragment : Fragment() {
 
@@ -26,7 +29,6 @@ class CharactersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        viewModel = ViewModelProvider(this).get(CharactersViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_character, container, false)
         return root
     }
@@ -34,6 +36,16 @@ class CharactersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         characters.adapter = adapter
+
+        val swipeHandler = object : SwipeToDeleteCallback(characters.context) {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                viewModel.removeItem(viewHolder.adapterPosition)
+            }
+        }
+
+        val itemTouchHelper = ItemTouchHelper(swipeHandler)
+        itemTouchHelper.attachToRecyclerView(characters)
+
         setupObservers()
     }
 
