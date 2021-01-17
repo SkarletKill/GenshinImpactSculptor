@@ -8,15 +8,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.skarlet.gis.R
 import kotlinx.android.synthetic.main.fragment_character.*
+import ua.skarlet.gis.ui.BaseFragment
+import ua.skarlet.gis.ui.dashboard.DashboardFragmentDirections
 import ua.skarlet.gis.util.SwipeToDeleteCallback
 
-class CharactersFragment : Fragment() {
+class CharactersFragment : BaseFragment() {
 
     private val viewModel: CharactersViewModel by lazy {
         ViewModelProvider(this).get(CharactersViewModel::class.java)
@@ -47,11 +48,16 @@ class CharactersFragment : Fragment() {
         itemTouchHelper.attachToRecyclerView(characters)
 
         setupObservers()
+        fabAddCharacter.setOnClickListener(::onAddItemClick)
     }
 
     private fun setupObservers() {
         viewModel.characters.observe(viewLifecycleOwner) {
             adapter.items = it
         }
+    }
+
+    private fun onAddItemClick(view: View) {
+        navController?.navigate(DashboardFragmentDirections.onNewCharacterClick())
     }
 }

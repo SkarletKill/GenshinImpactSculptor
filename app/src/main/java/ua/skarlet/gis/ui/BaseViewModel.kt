@@ -4,10 +4,10 @@
 
 package ua.skarlet.gis.ui
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import ua.skarlet.gis.GenshinImpactApplication
 import ua.skarlet.gis.db.AppDatabase
 
-abstract class BaseViewModel(application: Application) : AndroidViewModel(application) {
-    val db get() = AppDatabase.getDB(getApplication())
+abstract class BaseViewModel : ViewModel() {
+    val db get() = AppDatabase.getDB(GenshinImpactApplication.application)
 }

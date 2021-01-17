@@ -4,7 +4,6 @@
 
 package ua.skarlet.gis.ui.dashboard.character
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import ua.skarlet.gis.data.enumeration.Element
@@ -12,9 +11,9 @@ import ua.skarlet.gis.db.character.Character
 import ua.skarlet.gis.repo.CharacterRepository
 import ua.skarlet.gis.ui.BaseViewModel
 
-class CharactersViewModel(app: Application) : BaseViewModel(app) {
+class CharactersViewModel : BaseViewModel() {
 
-    val repo = CharacterRepository(viewModelScope, db.characterDao())
+    private val repo = CharacterRepository(viewModelScope, db.characterDao())
 
     val characters: LiveData<List<Character>> = repo.getAll()
 

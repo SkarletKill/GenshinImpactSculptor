@@ -12,6 +12,56 @@
     <string name="menu_artifacts">Artifacts</string>
     <string name="menu_advanced">Advanced</string>
 
+    <!-- Keywords -->
+    <string name="name">Name</string>
+    <string name="level">Level</string>
+    <string name="element">Element</string>
+    <string name="health">HP</string>
+    <string name="attack">ATK</string>
+    <string name="defense">DEF</string>
+    <string name="base_health">Base HP</string>
+    <string name="base_attack">Base ATK</string>
+    <string name="base_defense">Base DEF</string>
+    <string name="elemental_mastery">Elemental Mastery</string>
+    <string name="crit_rate">CRIT Rate</string>
+    <string name="crit_dmg">CRIT DMG</string>
+    <string name="damage_bonus">DMG Bonus</string>
+    <string name="elemental_damage_bonus">Elemental DMG Bonus</string>
+    <string name="phys_damage_bonus">Phys DMG Bonus</string>
+    <string name="reduce_cd">Reduce CD</string>
+    <string name="energy_recharge">Energy Recharge</string>
+    <string name="healing_bonus">Healing Bonus</string>
+    <string name="powerful_shield">Powerful Shield</string>
+
+    <!-- Element type -->
+    <string name="pyro">Pyro</string>
+    <string name="hydro">Hydro</string>
+    <string name="dendro">Dendro</string>
+    <string name="electro">Electro</string>
+    <string name="anemo">Anemo</string>
+    <string name="cryo">Cryo</string>
+    <string name="geo">Geo</string>
+
+    <!-- Artifact type -->
+    <string name="flower_of_life">Flower of Life</string>
+    <string name="plume_of_death">Plume of Death</string>
+    <string name="sands_of_eon">Sands of Eon</string>
+    <string name="goblet_of_eonothem">Goblet of Eonothem</string>
+    <string name="circlet_of_logos">Circlet of Logos</string>
+
+    <!-- Weapon type -->
+    <string name="bow">Bow</string>
+    <string name="sword">Sword</string>
+    <string name="polearm">Polearm</string>
+    <string name="claymore">Claymore</string>
+    <string name="catalyst">Catalyst</string>
+
+
     <!-- Welcome -->
     <string name="welcome">Welcome</string>
+
+    <!-- New Character -->
+    <string name="character_name">Character name</string>
+
+    <string name="add_item">add item</string>
 </resources>
