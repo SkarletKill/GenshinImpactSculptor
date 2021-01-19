@@ -8,12 +8,17 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="layout_margin">12dp</dimen>
-    <dimen name="quarter_margin">4dp</dimen>
-    <dimen name="half_margin">8dp</dimen>
-    <dimen name="default_margin">16dp</dimen>
+    <dimen name="margin_0.25">4dp</dimen>
+    <dimen name="margin_0.5">8dp</dimen>
+    <dimen name="margin_1.0">16dp</dimen>
+    <dimen name="margin_1.5">24dp</dimen>
+    <dimen name="margin_2.0">32dp</dimen>
 
     <!-- Text -->
+    <dimen name="text_head">24sp</dimen>
     <dimen name="text_subhead">20sp</dimen>
     <dimen name="text_regular">18sp</dimen>
     <dimen name="text_body">16sp</dimen>
+
+    <dimen name="dropdownSpinnerHeight">48dp</dimen>
 </resources>

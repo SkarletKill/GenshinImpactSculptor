@@ -16,6 +16,8 @@
     <color name="background_fab">#FA7E75</color>
     <color name="background_delete">#DC4D43</color>
 
+    <color name="text_color_dropdown">#8a000000</color>
+
     <color name="gray_ee">#EEEEEE</color>
     <color name="gray_e3">#E3E3E3</color>
     <color name="gray_e5">#E5E5E5</color>
