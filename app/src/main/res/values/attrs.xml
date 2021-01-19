@@ -4,7 +4,7 @@
   -->
 
 <resources>
-    <declare-styleable name="SSpinner">
-        <attr name="header" format="string"/>
+    <declare-styleable name="DropdownTextInputLayout">
+        <attr name="dropdownHeader" format="string"/>
     </declare-styleable>
 </resources>

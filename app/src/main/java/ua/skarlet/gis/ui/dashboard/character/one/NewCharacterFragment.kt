@@ -13,12 +13,20 @@ import com.google.android.material.textfield.TextInputLayout
 import com.skarlet.gis.R
 import com.skarlet.gis.databinding.FragmentNewCharacterBinding
 import kotlinx.android.synthetic.main.fragment_new_character.*
+import ua.skarlet.gis.data.enumeration.Vision
 import ua.skarlet.gis.ui.BaseFragment
 
 class NewCharacterFragment : BaseFragment() {
 
     private val viewModel: NewCharacterViewModel by lazy {
         ViewModelProvider(this).get(NewCharacterViewModel::class.java)
+    }
+
+    private val elementsAdapter = VisionAdapter { position ->
+        viewModel.vision.value = Vision.values()[position]
+    }.apply {
+        items = Vision.values().toList()
+        selectedPosition = 0
     }
 
     override fun onCreateView(
@@ -34,11 +42,16 @@ class NewCharacterFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
+        visionDropdown.adapter = elementsAdapter
     }
 
     private fun setupObservers() {
-        viewModel.elementType.observe(viewLifecycleOwner) {
-            (elementalDamageBonus.parent.parent as TextInputLayout).hint = "$it ${getString(R.string.damage_bonus)}"
+        viewModel.vision.observe(viewLifecycleOwner) { vision ->
+            (elementalDamageBonus.parent.parent as TextInputLayout).hint = getString(
+                R.string.e_damage_bonus,
+                getString(vision.stringRes)
+            )
+            elementsAdapter.selectedPosition = Vision.values().indexOf(vision)
         }
     }
 }

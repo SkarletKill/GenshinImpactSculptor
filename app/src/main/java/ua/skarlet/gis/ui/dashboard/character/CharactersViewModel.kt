@@ -6,7 +6,7 @@ package ua.skarlet.gis.ui.dashboard.character
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import ua.skarlet.gis.data.enumeration.Element
+import ua.skarlet.gis.data.enumeration.Vision
 import ua.skarlet.gis.db.character.Character
 import ua.skarlet.gis.repo.CharacterRepository
 import ua.skarlet.gis.ui.BaseViewModel
@@ -30,7 +30,7 @@ class CharactersViewModel : BaseViewModel() {
         val tartaglia = Character(
             "Tartaglia",
             80,
-            Element.HYDRO,
+            Vision.HYDRO,
             12182,
             790,
             757,
@@ -39,7 +39,7 @@ class CharactersViewModel : BaseViewModel() {
         val ganyu = Character(
             "Ganyu",
             80,
-            Element.CRYO,
+            Vision.CRYO,
             9108,
             735,
             586,

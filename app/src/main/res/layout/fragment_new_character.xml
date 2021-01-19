@@ -3,7 +3,10 @@
   ~ Copyright (c) 2021 by Skarlet RED
   -->
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ua.skarlet.gis.ui.dashboard.character.one.NewCharacterFragment">
 
     <data>
 
@@ -46,17 +49,20 @@
                     android:text="@={viewModel.level}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout
+                android:id="@+id/visionDropdown"
+                style="@style/TextInputLayout"
+                app:dropdownHeader="@string/vision"
+                app:hintAnimationEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/elementType"
+                    android:id="@+id/vision"
                     style="@style/Text.Regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/element"
-                    android:inputType="text"
-                    android:text="@={viewModel.elementType}" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="@string/vision"
+                    android:inputType="none" />
+            </ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
 

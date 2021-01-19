@@ -2,7 +2,7 @@
   ~ Copyright (c) 2021 by Skarlet RED
   -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Genshin Damage Boost</string>
 
     <!-- Bottom navigation -->
@@ -15,7 +15,7 @@
     <!-- Keywords -->
     <string name="name">Name</string>
     <string name="level">Level</string>
-    <string name="element">Element</string>
+    <string name="vision">Vision</string>
     <string name="health">HP</string>
     <string name="attack">ATK</string>
     <string name="defense">DEF</string>
@@ -26,6 +26,7 @@
     <string name="crit_rate">CRIT Rate</string>
     <string name="crit_dmg">CRIT DMG</string>
     <string name="damage_bonus">DMG Bonus</string>
+    <string name="e_damage_bonus"><xliff:g example="Pyro" id="element">%1$s</xliff:g> DMG Bonus</string>
     <string name="elemental_damage_bonus">Elemental DMG Bonus</string>
     <string name="phys_damage_bonus">Phys DMG Bonus</string>
     <string name="reduce_cd">Reduce CD</string>
@@ -63,5 +64,6 @@
     <!-- New Character -->
     <string name="character_name">Character name</string>
 
+    <string name="choose_an_item">Choose an item</string>
     <string name="add_item">add item</string>
 </resources>

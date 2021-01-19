@@ -10,7 +10,7 @@
     </style>
 
     <style name="Text.Head" parent="Text">
-        <item name="android:textSize">@dimen/text_subhead</item>
+        <item name="android:textSize">@dimen/text_head</item>
     </style>
 
     <style name="Text.Subhead" parent="Text">

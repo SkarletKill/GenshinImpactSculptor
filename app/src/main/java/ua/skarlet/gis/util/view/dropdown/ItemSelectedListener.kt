@@ -2,8 +2,8 @@
  * Copyright (c) 2021 by Skarlet RED
  */
 
-package ua.skarlet.gis.util.recycler
+package ua.skarlet.gis.util.view.dropdown
 
 fun interface ItemSelectedListener {
-    fun onSelect(position: Int)
+    fun onItemSelected(position: Int)
 }

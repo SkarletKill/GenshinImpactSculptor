@@ -14,7 +14,7 @@ const val ID ="uid"
 // character
 const val NAME ="name"
 const val LVL ="level"
-const val ELEMENT_TYPE ="elementType"
+const val VISION ="vision"
 const val BASE_HP ="baseHP"
 const val BASE_ATK ="baseATK"
 const val BASE_DEF ="baseDEF"

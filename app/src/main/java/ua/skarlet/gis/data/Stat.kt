@@ -6,7 +6,7 @@ package ua.skarlet.gis.data
 
 import androidx.annotation.StringRes
 import com.skarlet.gis.R
-import ua.skarlet.gis.data.enumeration.Element
+import ua.skarlet.gis.data.enumeration.Vision
 
 sealed class Stat(
     @StringRes var stringRes: Int,
@@ -33,7 +33,7 @@ sealed class Stat(
     ) : Stat(R.string.elemental_mastery, value)
 
     class ElementalDMG(
-        private val element: Element,
+        private val vision: Vision,
         override val value: Float = 0f
     ) : Stat(R.string.elemental_damage_bonus, value)
 

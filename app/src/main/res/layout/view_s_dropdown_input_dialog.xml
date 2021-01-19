@@ -12,14 +12,14 @@
 
     <!--  Header view  -->
     <TextView
-        android:id="@+id/sInputHeader"
+        android:id="@+id/sDropdownSpinnerHeader"
         style="@style/Text.Subhead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_2.0"
+        android:layout_marginTop="@dimen/margin_1.0"
         android:layout_marginEnd="@dimen/margin_2.0"
-        android:layout_marginTop="@dimen/margin_1.5"
-        android:layout_marginBottom="@dimen/margin_1.5"
+        android:layout_marginBottom="@dimen/margin_1.0"
         android:gravity="center_vertical"
         android:textColor="@color/black"
         tools:text="Choose an item" />
@@ -27,7 +27,7 @@
     <View style="@style/Divider.Horizontal.Light" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sInputRecyclerView"
+        android:id="@+id/sDropdownSpinnerRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/margin_2.0"

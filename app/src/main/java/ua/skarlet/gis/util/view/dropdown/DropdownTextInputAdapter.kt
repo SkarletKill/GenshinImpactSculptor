@@ -2,36 +2,31 @@
  * Copyright (c) 2021 by Skarlet RED
  */
 
-package ua.skarlet.gis.util.recycler
+package ua.skarlet.gis.util.view.dropdown
 
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.annotation.MainThread
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import ua.skarlet.gis.util.view.SSpinner
 
 /**
- * A small superstructure over a [RecyclerView.Adapter] required for [SSpinner].
+ * A small superstructure over a [RecyclerView.Adapter] required for [DropdownTextInputLayout].
  *
  * Adapters provide a binding from an app-specific data set to views that are displayed within a RecyclerView.
  *
  * @param VH A class that extends ViewHolder that will be used by the adapter.
  */
-abstract class ReactiveAdapter<VH : RecyclerView.ViewHolder>(
-    private val focusListener: ItemSelectedListener
-) : RecyclerView.Adapter<VH>(), SelectableItem {
-    @SuppressWarnings("LateinitUsage")
-    private var provider: SSpinner.TextProvider? = null
+abstract class DropdownTextInputAdapter<VH : RecyclerView.ViewHolder>(
+    private val itemSelectionListener: ItemSelectedListener
+) : RecyclerView.Adapter<VH>(), SelectableContainer {
+    private var provider: DropdownTextInputLayout.LabelProvider? = null
 
     override var selectedPosition: Int? = null
-        @SuppressWarnings("GlobalCoroutineUsage")
         @MainThread
         set(value) {
-            // TODO: remove GlobalScope
-            GlobalScope.launch(Dispatchers.Main) {
+            Handler(Looper.getMainLooper()).post {
                 field?.let(::notifyItemChanged)
                 field = value
                 field?.let(::notifyItemChanged)
@@ -42,7 +37,7 @@ abstract class ReactiveAdapter<VH : RecyclerView.ViewHolder>(
     override fun onBindViewHolder(holder: VH, position: Int) {
         holder.itemView.setOnClickListener { view ->
             provider?.provide(getItemLabel(view))
-            focusListener.onSelect(position)
+            itemSelectionListener.onItemSelected(position)
         }
         checkSelection(holder.itemView, selectedPosition == position)
     }
@@ -69,21 +64,7 @@ abstract class ReactiveAdapter<VH : RecyclerView.ViewHolder>(
     /**
      * Internal. Using this method in client code have no impact
      */
-    internal fun setProvider(textProvider: SSpinner.TextProvider) {
-        provider = textProvider
+    internal fun setLabelProvider(labelProvider: DropdownTextInputLayout.LabelProvider) {
+        provider = labelProvider
     }
-}
-
-interface SelectableItem {
-    var selectedPosition: Int?
-
-    /**
-     * This method will be called when item is selected
-     */
-    fun onItemSelected(itemView: View)
-
-    /**
-     * This method will be called when the item loses its selection
-     */
-    fun onCancelItemSelection(itemView: View)
 }
