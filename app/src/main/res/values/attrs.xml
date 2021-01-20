@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 by Skarlet RED
+  -->
+
+<resources>
+    <declare-styleable name="DropdownTextInputLayout">
+        <attr name="dropdownHeader" format="string"/>
+    </declare-styleable>
+</resources>

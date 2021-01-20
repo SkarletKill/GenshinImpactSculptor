@@ -5,8 +5,32 @@
 
 <resources>
     <!-- Text -->
+    <style name="Text">
+        <item name="android:fontFamily">@font/garbata_regular</item>
+    </style>
+
+    <style name="Text.Head" parent="Text">
+        <item name="android:textSize">@dimen/text_head</item>
+    </style>
+
+    <style name="Text.Subhead" parent="Text">
+        <item name="android:textSize">@dimen/text_subhead</item>
+    </style>
+
+    <style name="Text.Regular" parent="Text">
+        <item name="android:textSize">@dimen/text_regular</item>
+    </style>
+
 
     <!-- View -->
+    <style name="TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_0.5</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="hintAnimationEnabled">true</item>
+        <item name="hintEnabled">true</item>
+    </style>
 
     <!-- Divider -->
     <style name="Divider">
@@ -26,6 +50,11 @@
 
     <style name="Divider.Light">
         <item name="android:background">@color/gray_e5</item>
+    </style>
+
+    <style name="Divider.Horizontal.Light" parent="Divider.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
     </style>
 
     <!-- Dialog -->

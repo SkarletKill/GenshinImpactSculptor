@@ -14,6 +14,7 @@
         android:name="ua.skarlet.gis.ui.welcome.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome">
+
         <action
             android:id="@+id/onPrimaryContentClick"
             app:destination="@id/dashboardFragment" />
@@ -23,6 +24,16 @@
         android:id="@+id/dashboardFragment"
         android:name="ua.skarlet.gis.ui.dashboard.DashboardFragment"
         android:label="DashboardFragment">
+
+        <action
+            android:id="@+id/onNewCharacterClick"
+            app:destination="@id/newCharacterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newCharacterFragment"
+        android:name="ua.skarlet.gis.ui.dashboard.character.one.NewCharacterFragment"
+        android:label="NewCharacterFragment">
     </fragment>
 
 </navigation>
