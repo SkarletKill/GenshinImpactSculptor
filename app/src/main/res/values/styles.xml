@@ -7,6 +7,11 @@
     <!-- Text -->
     <style name="Text">
         <item name="android:fontFamily">@font/garbata_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Toolbar" parent="Text">
+        <item name="android:textSize">@dimen/text_toolbar</item>
     </style>
 
     <style name="Text.Head" parent="Text">
@@ -21,6 +26,15 @@
         <item name="android:textSize">@dimen/text_regular</item>
     </style>
 
+    <style name="Text.Body" parent="Text">
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/background_toolbar</item>
+        <item name="titleTextAppearance">@style/Text.Toolbar</item>
+    </style>
 
     <!-- View -->
     <style name="TextInputLayout">

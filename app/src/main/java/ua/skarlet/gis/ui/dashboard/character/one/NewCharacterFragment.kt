@@ -15,6 +15,8 @@ import com.skarlet.gis.databinding.FragmentNewCharacterBinding
 import kotlinx.android.synthetic.main.fragment_new_character.*
 import ua.skarlet.gis.data.enumeration.Vision
 import ua.skarlet.gis.ui.BaseFragment
+import ua.skarlet.gis.util.DrawerMode
+import ua.skarlet.gis.util.SToolbar.ToolbarMode
 
 class NewCharacterFragment : BaseFragment() {
 
@@ -43,6 +45,11 @@ class NewCharacterFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         visionDropdown.adapter = elementsAdapter
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sToolbar?.setup(ToolbarMode.REGULAR, getString(R.string.new_character), DrawerMode.ARROW)
     }
 
     private fun setupObservers() {

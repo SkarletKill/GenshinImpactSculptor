@@ -25,6 +25,6 @@
         android:id="@+id/characters"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_layout"
+        android:background="@color/background_window"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </androidx.constraintlayout.widget.ConstraintLayout>

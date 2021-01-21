@@ -15,6 +15,8 @@ import com.skarlet.gis.R
 import kotlinx.android.synthetic.main.fragment_character.*
 import ua.skarlet.gis.ui.BaseFragment
 import ua.skarlet.gis.ui.dashboard.DashboardFragmentDirections
+import ua.skarlet.gis.util.DrawerMode
+import ua.skarlet.gis.util.SToolbar.ToolbarMode
 import ua.skarlet.gis.util.SwipeToDeleteCallback
 
 class CharactersFragment : BaseFragment() {
@@ -30,8 +32,7 @@ class CharactersFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_character, container, false)
-        return root
+        return inflater.inflate(R.layout.fragment_character, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,6 +50,11 @@ class CharactersFragment : BaseFragment() {
 
         setupObservers()
         fabAddCharacter.setOnClickListener(::onAddItemClick)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sToolbar?.setup(ToolbarMode.REGULAR, getString(R.string.characters), DrawerMode.ARROW)
     }
 
     private fun setupObservers() {

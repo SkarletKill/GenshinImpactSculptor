@@ -60,6 +60,12 @@
 
     <!-- Welcome -->
     <string name="welcome">Welcome</string>
+    <string name="characters">Characters</string>
+    <string name="weapons">Weapons</string>
+    <string name="artifacts">Artifacts</string>
+    <string name="advanced">Advanced</string>
+    <string name="builds">Builds</string>
+    <string name="new_character">Make character</string>
 
     <!-- New Character -->
     <string name="character_name">Character name</string>

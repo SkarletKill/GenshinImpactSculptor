@@ -11,6 +11,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.appbar.MaterialToolbar
 import com.ober.drawerxarrowdrawable.DrawerXArrowDrawable
+import com.skarlet.gis.R
 import kotlinx.android.synthetic.main.view_s_toolbar.view.*
 import ua.skarlet.gis.util.SToolbar.ToolbarMode
 
@@ -28,7 +29,7 @@ class SToolbar @JvmOverloads constructor(
 ) : MaterialToolbar(context, attrs, defStyle) {
 
     private val drawerXArrowDrawable = DrawerXArrowDrawable(context, DrawerMode.DRAWER).apply {
-        color = Color.BLACK
+        color = context.resources.getColor(R.color.textPrimary, null)
     }
 
     /**
