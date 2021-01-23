@@ -49,6 +49,7 @@ class NewCharacterFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         visionDropdown.adapter = elementsAdapter
+        buttonSaveCharacter.setOnClickListener { onSaveClick() }
     }
 
     override fun onResume() {

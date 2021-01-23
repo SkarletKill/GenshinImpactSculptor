@@ -36,7 +36,7 @@ class CharactersAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         fun bind(item: Character) {
             itemView.run {
                 characterName.text = item.name
-                characterLvl.text = item.level.toString()
+                characterLvl.text = resources.getString(R.string.lvl_num, item.level)
             }
         }
     }

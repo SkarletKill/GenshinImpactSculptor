@@ -15,6 +15,7 @@
         style="@style/Text.Subhead"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_0.5"
         app:layout_constraintEnd_toStartOf="@+id/characterGuideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,12 +32,12 @@
     <TextView
         android:id="@+id/characterLvl"
         style="@style/Text.Subhead"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/characterGuideline"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="90" />
-
+        tools:text="Lv. 90" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

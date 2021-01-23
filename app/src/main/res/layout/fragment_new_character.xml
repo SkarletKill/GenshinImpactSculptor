@@ -169,6 +169,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayout"
+                android:layout_marginBottom="@dimen/margin_1.0"
                 app:boxStrokeColor="@color/textPrimary"
                 app:hintTextColor="@color/textSecondary">
 
@@ -182,15 +183,13 @@
                     android:text="@={viewModel.elementalDamageBonus}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                style="@style/Text.Regular"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSaveCharacter"
+                style="@style/ButtonPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_0.5"
-                android:background="@color/textPrimary"
-                android:text="@string/save"
-                android:textColor="@color/colorDark"
-                android:textSize="@dimen/text_regular" />
+                android:layout_margin="@dimen/buttonClipSize"
+                android:text="@string/save" />
 
         </LinearLayout>
     </ScrollView>

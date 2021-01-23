@@ -18,10 +18,24 @@ import ua.skarlet.gis.db.constants.DB_NAME
 abstract class AppDatabase : RoomDatabase() {
     abstract fun characterDao(): CharacterDao
 
-    companion object {
-        fun getDB(appContext: Context) = Room.databaseBuilder(
-            appContext,
-            AppDatabase::class.java, DB_NAME
-        ).build()
+companion object {
+    @Volatile
+    private var INSTANCE: AppDatabase? = null
+
+    @Synchronized
+    fun getDB(context: Context): AppDatabase {
+        // if the INSTANCE is not null, then return it, otherwise create the database
+        return INSTANCE ?: run {
+            val instance = Room.databaseBuilder(
+                context.applicationContext,
+                AppDatabase::class.java,
+                DB_NAME
+            ).build()
+            INSTANCE = instance
+            // return instance
+            instance
+        }
     }
+
+}
 }
