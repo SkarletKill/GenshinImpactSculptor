@@ -10,7 +10,7 @@
     android:viewportHeight="9">
 
     <path
-        android:strokeColor="@color/text_color_spinner_item"
+        android:strokeColor="@color/text_color_dropdown_item"
         android:strokeWidth="1"
         android:strokeMiterLimit="10"
         android:strokeLineCap="round"

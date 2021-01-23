@@ -10,11 +10,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import com.skarlet.gis.R
 import ua.skarlet.gis.util.SToolbar
 
-abstract class BaseFragment: Fragment(), NavControllerOwner {
+abstract class BaseFragment : Fragment(), NavControllerOwner {
 
     protected var binding: ViewDataBinding? = null
     protected var isAlreadyBound = false
@@ -27,6 +28,8 @@ abstract class BaseFragment: Fragment(), NavControllerOwner {
 
     override val navController: NavController?
         get() = (activity as NavControllerOwner).navController
+
+    private val subscriptions: MutableList<LiveData<out Any>> = mutableListOf()
 
     @Suppress("UNCHECKED_CAST")
     protected fun <ViewBindingType : ViewDataBinding?> setAndBindContentView(
@@ -60,4 +63,23 @@ abstract class BaseFragment: Fragment(), NavControllerOwner {
      * @return true if the back button press is consumed.
      */
     open fun onBackPressed(): Boolean = false
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        releaseObservers()
+    }
+
+    protected open fun releaseObservers() {
+        subscriptions.forEach { subscription ->
+            subscription.removeObservers(viewLifecycleOwner)
+        }
+        subscriptions.clear()
+    }
+
+    protected fun <T : Any> subscribe(pair: Pair<LiveData<T>, (T) -> Unit>) {
+        val (field, action) = pair
+
+        field.observe(viewLifecycleOwner, action)
+        subscriptions.add(field)
+    }
 }

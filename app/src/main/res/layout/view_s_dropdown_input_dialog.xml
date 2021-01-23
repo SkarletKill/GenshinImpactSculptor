@@ -8,20 +8,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
+    android:background="@color/background_window"
     android:orientation="vertical">
 
     <!--  Header view  -->
     <TextView
         android:id="@+id/sDropdownSpinnerHeader"
-        style="@style/Text.Subhead"
+        style="@style/Text.ExtraHead"
+        android:background="@color/colorPrimaryVariant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_2.0"
-        android:layout_marginTop="@dimen/margin_1.0"
-        android:layout_marginEnd="@dimen/margin_2.0"
-        android:layout_marginBottom="@dimen/margin_1.0"
+        android:paddingTop="@dimen/margin_1.0"
+        android:paddingBottom="@dimen/margin_1.0"
+        android:paddingStart="@dimen/margin_2.0"
+        android:paddingEnd="@dimen/margin_2.0"
         android:gravity="center_vertical"
-        android:textColor="@color/black"
+        android:textColor="@color/textPrimary"
         tools:text="Choose an item" />
 
     <View style="@style/Divider.Horizontal.Light" />

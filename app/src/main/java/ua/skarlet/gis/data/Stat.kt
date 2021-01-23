@@ -13,7 +13,7 @@ sealed class Stat(
     open val value: Number
 ) {
     class Level(
-        override var value: Int = 0
+        override var value: Int = 1
     ) : Stat(R.string.level, value)
 
     class ATK(

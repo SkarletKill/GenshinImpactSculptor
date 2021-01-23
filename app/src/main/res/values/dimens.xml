@@ -13,9 +13,11 @@
     <dimen name="margin_1.0">16dp</dimen>
     <dimen name="margin_1.5">24dp</dimen>
     <dimen name="margin_2.0">32dp</dimen>
+    <dimen name="margin_fab">16dp</dimen>
 
     <!-- Text -->
     <dimen name="text_toolbar">22sp</dimen>
+    <dimen name="text_extra_head">28sp</dimen>
     <dimen name="text_head">24sp</dimen>
     <dimen name="text_subhead">20sp</dimen>
     <dimen name="text_regular">18sp</dimen>

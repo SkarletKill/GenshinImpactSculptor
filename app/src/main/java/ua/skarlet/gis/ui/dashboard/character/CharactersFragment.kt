@@ -50,6 +50,7 @@ class CharactersFragment : BaseFragment() {
 
         setupObservers()
         fabAddCharacter.setOnClickListener(::onAddItemClick)
+
     }
 
     override fun onResume() {

@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/characterName"
         style="@style/Text.Subhead"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/characterGuideline"
         app:layout_constraintHorizontal_bias="0.0"

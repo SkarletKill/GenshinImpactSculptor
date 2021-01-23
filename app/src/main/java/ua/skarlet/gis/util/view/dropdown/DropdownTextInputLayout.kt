@@ -37,6 +37,7 @@ class DropdownTextInputLayout(context: Context, attrs: AttributeSet?) : TextInpu
         // Create and show dialog with available items
         editText.setOnClickListener {
             adapter?.let {
+                if (dialog != null) return@let
                 dialog = DropdownTextInputDialog(context, dialogHeader, it).apply {
                     show()
                 }

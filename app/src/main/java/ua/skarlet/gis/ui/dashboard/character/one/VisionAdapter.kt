@@ -44,10 +44,12 @@ class VisionAdapter(
 
     override fun onItemSelected(itemView: View) {
         itemView.elementText.makeBold()
+        itemView.elementText.setTextColor(itemView.resources.getColor(R.color.textPrimary, null))
     }
 
     override fun onCancelItemSelection(itemView: View) {
         itemView.elementText.makeNormal()
+        itemView.elementText.setTextColor(itemView.resources.getColor(R.color.textSecondary, null))
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

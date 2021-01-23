@@ -25,19 +25,30 @@
             android:orientation="vertical"
             android:padding="@dimen/layout_margin">
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/characterName"
                     style="@style/Text.Regular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTintMode="src_in"
+                    android:foregroundTint="#ff0000"
+                    android:foregroundTintMode="src_atop"
                     android:hint="@string/character_name"
                     android:inputType="text"
-                    android:text="@={viewModel.characterName}" />
+                    android:text="@={viewModel.characterName}"
+                    android:textColorHighlight="@color/textSecondary"
+                    android:textColorLink="@color/purple_500" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/level"
@@ -52,8 +63,10 @@
             <ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout
                 android:id="@+id/visionDropdown"
                 style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
                 app:dropdownHeader="@string/vision"
-                app:hintAnimationEnabled="false">
+                app:hintAnimationEnabled="false"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/vision"
@@ -64,7 +77,10 @@
                     android:inputType="none" />
             </ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/baseHP"
@@ -76,7 +92,10 @@
                     android:text="@={viewModel.baseHP}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/baseATK"
@@ -88,7 +107,10 @@
                     android:text="@={viewModel.baseATK}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/baseDEF"
@@ -100,7 +122,10 @@
                     android:text="@={viewModel.baseDEF}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/elementalMastery"
@@ -112,7 +137,10 @@
                     android:text="@={viewModel.elementalMastery}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/critRate"
@@ -124,7 +152,10 @@
                     android:text="@={viewModel.critRate}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/critDamage"
@@ -136,7 +167,10 @@
                     android:text="@={viewModel.critDamage}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout style="@style/TextInputLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/elementalDamageBonus"
@@ -147,6 +181,17 @@
                     android:inputType="numberDecimal"
                     android:text="@={viewModel.elementalDamageBonus}" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                style="@style/Text.Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_0.5"
+                android:background="@color/textPrimary"
+                android:text="@string/save"
+                android:textColor="@color/colorDark"
+                android:textSize="@dimen/text_regular" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

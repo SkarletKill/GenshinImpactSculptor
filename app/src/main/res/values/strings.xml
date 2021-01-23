@@ -58,6 +58,9 @@
     <string name="catalyst">Catalyst</string>
 
 
+    <!-- Menu -->
+    <string name="save">Save</string>
+
     <!-- Welcome -->
     <string name="welcome">Welcome</string>
     <string name="characters">Characters</string>
@@ -72,4 +75,5 @@
 
     <string name="choose_an_item">Choose an item</string>
     <string name="add_item">add item</string>
+
 </resources>

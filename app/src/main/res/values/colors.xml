@@ -3,11 +3,12 @@
   ~ Copyright (c) 2021 by Skarlet RED
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Primary brand color. -->
-    <color name="colorPrimary">@color/purple_500</color>
-    <color name="colorPrimaryVariant">@color/purple_700</color>
-    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorDark">#070707</color>
+    <color name="colorPrimary">#CCC9D1</color>
+    <color name="colorPrimaryVariant">#121212</color>
+    <color name="colorOnPrimary">#FFBB86FC</color>
     <!-- Secondary brand color. -->
     <color name="colorSecondary">@color/teal_200</color>
     <color name="colorSecondaryVariant">@color/teal_700</color>
@@ -19,16 +20,18 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
+    <color name="test">#121212</color>
+
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="background_toolbar">@color/colorPrimaryVariant</color>
-    <color name="background_window">#FFFFFF</color>
-    <color name="background_fab">#FA7E75</color>
-    <color name="background_delete">#DC4D43</color>
+    <color name="background_window">#222023</color>
+    <color name="background_delete">#a55248</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/textSecondary</color>
 
     <color name="textPrimary">#FFFFFF</color>
-    <color name="text_color_spinner_item">#000000</color>
-    <color name="text_color_dropdown">#8a000000</color>
+    <color name="textSecondary">#76FFFFFF</color>
+    <color name="text_color_dropdown_item">@color/textSecondary</color>
 
     <color name="gray_ee">#EEEEEE</color>
     <color name="gray_e3">#E3E3E3</color>
