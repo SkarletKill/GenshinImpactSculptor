@@ -20,13 +20,25 @@ sealed class Stat(
         override val value: Int = 0
     ) : Stat(R.string.attack, value)
 
+    class ATK_RATE(
+        override val value: Float = 0.0f
+    ) : Stat(R.string.attack_rate, value)
+
     class DEF(
         override val value: Int = 0
     ) : Stat(R.string.defense, value)
 
+    class DEF_RATE(
+        override val value: Float = 0.0f
+    ) : Stat(R.string.defense_rate, value)
+
     class HP(
         override val value: Int = 0
     ) : Stat(R.string.health, value)
+
+    class HP_RATE(
+        override val value: Float = 0.0f
+    ) : Stat(R.string.health_rate, value)
 
     class ElementalMastery(
         override val value: Int = 0
@@ -64,5 +76,4 @@ sealed class Stat(
     class PowerfulShield(
         override val value: Float = 0f
     ) : Stat(R.string.powerful_shield, value)
-
 }

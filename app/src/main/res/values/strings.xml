@@ -17,8 +17,11 @@
     <string name="level">Level</string>
     <string name="vision">Vision</string>
     <string name="health">HP</string>
+    <string name="health_rate">HP %</string>
     <string name="attack">ATK</string>
+    <string name="attack_rate">ATK %</string>
     <string name="defense">DEF</string>
+    <string name="defense_rate">DEF %</string>
     <string name="base_health">Base HP</string>
     <string name="base_attack">Base ATK</string>
     <string name="base_defense">Base DEF</string>
@@ -68,7 +71,10 @@
     <string name="artifacts">Artifacts</string>
     <string name="advanced">Advanced</string>
     <string name="builds">Builds</string>
-    <string name="new_character">Make character</string>
+    <string name="new_character">Make Character</string>
+    <string name="new_weapon">Make Weapon</string>
+    <string name="new_artifact">Make Artifact</string>
+    <string name="new_build">Make Build</string>
 
     <!-- New Character -->
     <string name="character_name">Character name</string>

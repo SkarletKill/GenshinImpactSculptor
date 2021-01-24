@@ -2,14 +2,14 @@
  * Copyright (c) 2021 by Skarlet RED
  */
 
-package ua.skarlet.gis.ui.dashboard.character.one
+package ua.skarlet.gis.data.adapter
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.skarlet.gis.R
 import kotlinx.android.synthetic.main.item_view_element.view.*
-import ua.skarlet.gis.data.enumeration.Vision
+import ua.skarlet.gis.data.enumeration.WeaponType
 import ua.skarlet.gis.util.ext.createView
 import ua.skarlet.gis.util.ext.getString
 import ua.skarlet.gis.util.font.makeBold
@@ -17,10 +17,10 @@ import ua.skarlet.gis.util.font.makeNormal
 import ua.skarlet.gis.util.view.dropdown.DropdownTextInputAdapter
 import ua.skarlet.gis.util.view.dropdown.ItemSelectedListener
 
-class VisionAdapter(
+class WeaponTypeAdapter(
     focusListener: ItemSelectedListener
-) : DropdownTextInputAdapter<VisionAdapter.ViewHolder>(focusListener) {
-    var items: List<Vision> = mutableListOf()
+) : DropdownTextInputAdapter<WeaponTypeAdapter.ViewHolder>(focusListener) {
+    var items: List<WeaponType> = mutableListOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -38,9 +38,9 @@ class VisionAdapter(
 
     override fun getItemLabel(itemView: View): String = itemView.elementText.text.toString()
 
-    private fun getItemLabel(vision: Vision): String = getString(vision.stringRes)
+    private fun getItemLabel(weaponType: WeaponType): String = getString(weaponType.stringRes)
 
-    fun updateLabel(item: Vision) = updateLabel(getItemLabel(item))
+    fun updateLabel(item: WeaponType) = updateLabel(getItemLabel(item))
 
     override fun onItemSelected(itemView: View) {
         itemView.elementText.makeBold()
@@ -53,7 +53,7 @@ class VisionAdapter(
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: Vision) = itemView.run {
+        fun bind(item: WeaponType) = itemView.run {
             elementText.text = resources.getString(item.stringRes)
             elementImage.setBackgroundResource(item.drawable)
         }

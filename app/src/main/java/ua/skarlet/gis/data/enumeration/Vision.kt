@@ -19,6 +19,7 @@ enum class Vision(val uid: Int, @StringRes val stringRes: Int, @DrawableRes val 
     GEO(6, R.string.geo, R.drawable.ic_element_geo);
 
     companion object {
+        fun byID(uid: Int) = values().find { uid == it.uid }
         fun byName(name: String) = values().find { name == getString(it.stringRes) }
     }
 }

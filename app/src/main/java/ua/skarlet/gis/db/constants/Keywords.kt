@@ -28,6 +28,11 @@ const val ENERGY_RECHARGE ="energyRecharge"
 const val HEALING_BONUS ="healingBonus"
 const val POWERFUL_SHIELD ="powerfulShield"
 
+// weapon
+const val WEAPON_TYPE = "weapon_type"
+const val SUB_STAT = "subStat"
+const val SUB_STAT_RATE = "subStatRate"
+const val ABILITIES = "abilities"
 
 // queries
 const val SELECT_ALL = "SELECT * FROM"
