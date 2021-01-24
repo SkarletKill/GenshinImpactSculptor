@@ -28,12 +28,42 @@
         <action
             android:id="@+id/onNewCharacterClick"
             app:destination="@id/newCharacterFragment" />
+
+        <action
+            android:id="@+id/onNewWeaponClick"
+            app:destination="@id/newWeaponFragment" />
+
+        <action
+            android:id="@+id/onNewArtifactClick"
+            app:destination="@id/newArtifactFragment" />
+
+        <action
+            android:id="@+id/onNewBuildClick"
+            app:destination="@id/newBuildFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/newCharacterFragment"
         android:name="ua.skarlet.gis.ui.dashboard.character.one.NewCharacterFragment"
         android:label="NewCharacterFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/newWeaponFragment"
+        android:name="ua.skarlet.gis.ui.dashboard.weapon.one.NewWeaponFragment"
+        android:label="NewWeaponFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/newArtifactFragment"
+        android:name="ua.skarlet.gis.ui.dashboard.weapon.one.NewWeaponFragment"
+        android:label="NewArtifactFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/newBuildFragment"
+        android:name="ua.skarlet.gis.ui.dashboard.weapon.one.NewWeaponFragment"
+        android:label="NewBuildFragment">
     </fragment>
 
 </navigation>

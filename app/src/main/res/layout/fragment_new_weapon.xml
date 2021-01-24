@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 by Skarlet RED
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ua.skarlet.gis.ui.dashboard.weapon.one.NewWeaponFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ua.skarlet.gis.ui.dashboard.weapon.one.NewWeaponViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_margin">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/weaponName"
+                    style="@style/Text.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTintMode="src_in"
+                    android:foregroundTint="#ff0000"
+                    android:foregroundTintMode="src_atop"
+                    android:hint="@string/weapon_name"
+                    android:inputType="text"
+                    android:text="@={viewModel.weaponName}"
+                    android:textColorHighlight="@color/textSecondary"
+                    android:textColorLink="@color/purple_500" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout
+                android:id="@+id/weaponTypeDropdown"
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:dropdownHeader="@string/weapon_type"
+                app:hintAnimationEnabled="false"
+                app:hintTextColor="@color/textSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/weaponType"
+                    style="@style/Text.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/weapon_type"
+                    android:inputType="none" />
+            </ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout>
+
+            <ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout
+                android:id="@+id/subStatDropdown"
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:dropdownHeader="@string/sub_stat"
+                app:hintAnimationEnabled="false"
+                app:hintTextColor="@color/textSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/subStat"
+                    style="@style/Text.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/sub_stat"
+                    android:inputType="none" />
+            </ua.skarlet.gis.util.view.dropdown.DropdownTextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/level"
+                    style="@style/Text.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/weapon_level"
+                    android:inputType="number"
+                    android:text="@={viewModel.level}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/baseATK"
+                    style="@style/Text.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/base_attack"
+                    android:inputType="number"
+                    android:text="@={viewModel.baseATK}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayout"
+                android:layout_marginBottom="@dimen/margin_1.0"
+                app:boxStrokeColor="@color/textPrimary"
+                app:hintTextColor="@color/textSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/subStatRate"
+                    style="@style/Text.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/sub_stat_rate"
+                    android:inputType="numberDecimal"
+                    android:text="@={viewModel.subStatValue}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSaveWeapon"
+                style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/buttonClipSize"
+                android:text="@string/save" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

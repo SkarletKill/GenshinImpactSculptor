@@ -79,6 +79,17 @@
     <!-- New Character -->
     <string name="character_name">Character name</string>
 
+    <!-- New Weapon -->
+    <string name="weapon_name">Weapon name</string>
+    <string name="weapon_type">Weapon Type</string>
+    <string name="weapon_level">Weapon Level</string>
+    <string name="sub_stat">Sub Stat</string>
+    <string name="sub_stat_rate">Sub Stat Rate</string>
+
+    <!-- New Artifact -->
+    <string name="artifact_name">Artifact name</string>
+
+
     <string name="choose_an_item">Choose an item</string>
     <string name="add_item">add item</string>
     <string name="lvl_num">Lv. <xliff:g example="90" id="level">%1$d</xliff:g></string>

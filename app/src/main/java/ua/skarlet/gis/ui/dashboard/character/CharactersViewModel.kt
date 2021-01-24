@@ -17,15 +17,6 @@ class CharactersViewModel : BaseViewModel() {
 
     val characters: LiveData<List<Character>> = repo.getAll()
 
-//    init {
-//        val item = createCharacters()[0]
-//        characters.value?.let { items ->
-//            if (items.find { it.name == item.name } == null) {
-//                repo.insert(item)
-//            }
-//        }
-//    }
-
     private fun createCharacters(): List<Character> {
         val tartaglia = Character(
             "Tartaglia",

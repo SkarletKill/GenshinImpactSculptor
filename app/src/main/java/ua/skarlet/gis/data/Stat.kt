@@ -45,7 +45,7 @@ sealed class Stat(
     ) : Stat(R.string.elemental_mastery, value)
 
     class ElementalDMG(
-        private val vision: Vision,
+        private val vision: Vision? = null,
         override val value: Float = 0f
     ) : Stat(R.string.elemental_damage_bonus, value)
 
@@ -76,4 +76,45 @@ sealed class Stat(
     class PowerfulShield(
         override val value: Float = 0f
     ) : Stat(R.string.powerful_shield, value)
+
+    companion object DatabaseMapper {
+        fun getState(value: String): Stat? = when (value) {
+            "LVL" -> Level()
+            "ATK" -> ATK()
+            "ATR" -> ATK_RATE()
+            "DEF" -> DEF()
+            "DER" -> DEF_RATE()
+            "HP" -> HP()
+            "HPR" -> HP_RATE()
+            "EM" -> ElementalMastery()
+            "EDB" -> ElementalDMG()
+            "PDB" -> PhysDMG()
+            "CR" -> CritRate()
+            "CDM" -> CritDMG()
+            "RCD" -> ReduceCD()
+            "ER" -> EnergyRecharge()
+            "HB" -> HealingBonus()
+            "PS" -> PowerfulShield()
+            else -> null
+        }
+
+        fun getStringId(value: Stat): String = when (value) {
+            is Level -> "LVL"
+            is ATK -> "ATK"
+            is ATK_RATE -> "ATR"
+            is DEF -> "DEF"
+            is DEF_RATE -> "DER"
+            is HP -> "HP"
+            is HP_RATE -> "HPR"
+            is ElementalMastery -> "EM"
+            is ElementalDMG -> "EDB"
+            is PhysDMG -> "PDB"
+            is CritRate -> "CR"
+            is CritDMG -> "CDM"
+            is ReduceCD -> "RCD"
+            is EnergyRecharge -> "ER"
+            is HealingBonus -> "HB"
+            is PowerfulShield -> "PS"
+        }
+    }
 }

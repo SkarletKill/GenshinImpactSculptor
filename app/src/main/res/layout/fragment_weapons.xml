@@ -10,18 +10,20 @@
     android:layout_height="match_parent"
     tools:context="ua.skarlet.gis.ui.dashboard.weapon.WeaponsFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Weapon fragment"
-        android:textAlignment="center"
-        android:textSize="20sp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddWeapon"
+        style="@style/FAB"
+        android:contentDescription="@string/add_item"
+        android:src="@drawable/ic_add_white_24"
+        app:backgroundTint="@color/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:tint="@color/colorOnPrimary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/weapons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_window"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </androidx.constraintlayout.widget.ConstraintLayout>

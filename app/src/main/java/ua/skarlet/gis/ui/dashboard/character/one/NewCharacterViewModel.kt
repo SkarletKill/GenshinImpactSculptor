@@ -4,8 +4,6 @@
 
 package ua.skarlet.gis.ui.dashboard.character.one
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
@@ -19,12 +17,6 @@ import kotlin.random.Random
 class NewCharacterViewModel : BaseViewModel() {
 
     private val repo = CharacterRepository(viewModelScope, db.characterDao())
-
-    val characters: LiveData<List<Character>> = repo.getAll().also {
-        it.observeForever {
-            Log.d("NewCharacterViewModel", "Characters size: ${it.size}")
-        }
-    }
 
     // data binding
     val characterName = MutableLiveData<String>()

@@ -12,6 +12,7 @@ import com.skarlet.gis.R
 import com.skarlet.gis.databinding.FragmentNewCharacterBinding
 import kotlinx.android.synthetic.main.fragment_new_character.*
 import kotlinx.coroutines.runBlocking
+import ua.skarlet.gis.data.adapter.VisionAdapter
 import ua.skarlet.gis.data.enumeration.Vision
 import ua.skarlet.gis.ui.BaseFragment
 import ua.skarlet.gis.util.DrawerMode

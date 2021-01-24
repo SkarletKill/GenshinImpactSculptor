@@ -5,13 +5,18 @@
 package ua.skarlet.gis.ui.dashboard.build
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import ua.skarlet.gis.db.build.Build
+import ua.skarlet.gis.repo.BuildRepository
+import ua.skarlet.gis.ui.BaseViewModel
 
-class BuildsViewModel : ViewModel() {
+class BuildsViewModel : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Builds Fragment"
+    private val repo = BuildRepository(viewModelScope, db.buildDao())
+
+    val builds: LiveData<List<Build>> = repo.getAll()
+
+    fun removeItem(position: Int) {
+        repo.delete(builds.value!![position])
     }
-    val text: LiveData<String> = _text
 }

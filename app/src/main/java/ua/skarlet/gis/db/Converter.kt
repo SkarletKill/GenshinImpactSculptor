@@ -5,26 +5,33 @@
 package ua.skarlet.gis.db
 
 import androidx.room.TypeConverter
+import ua.skarlet.gis.data.Stat
 import ua.skarlet.gis.data.enumeration.ArtifactType
 import ua.skarlet.gis.data.enumeration.Vision
 import ua.skarlet.gis.data.enumeration.WeaponType
 
 class Converter {
     @TypeConverter
-    fun toElementType(value: Int) = enumValues<Vision>().find { it.uid == value }
+    fun toElementType(uid: Int) = Vision.byID(uid)
 
     @TypeConverter
-    fun fromElementType(value: Vision) = value.uid
+    fun fromElementType(item: Vision) = item.uid
 
     @TypeConverter
-    fun toWeaponType(value: Int) = enumValues<WeaponType>().find { it.uid == value }
+    fun toWeaponType(uid: Int) = WeaponType.byID(uid)
 
     @TypeConverter
-    fun fromWeaponType(value: WeaponType) = value.uid
+    fun fromWeaponType(item: WeaponType) = item.uid
 
     @TypeConverter
-    fun toArtifactType(value: Int) = enumValues<ArtifactType>().find { it.uid == value }
+    fun toArtifactType(uid: Int) = ArtifactType.byID(uid)
 
     @TypeConverter
-    fun fromArtifactType(value: ArtifactType) = value.uid
+    fun fromArtifactType(item: ArtifactType) = item.uid
+
+    @TypeConverter
+    fun toStat(stringUid: String): Stat = Stat.DatabaseMapper.getState(stringUid)!!
+
+    @TypeConverter
+    fun fromArtifactType(item: Stat) = Stat.DatabaseMapper.getStringId(item)
 }

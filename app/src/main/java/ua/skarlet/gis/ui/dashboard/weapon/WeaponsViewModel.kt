@@ -5,13 +5,18 @@
 package ua.skarlet.gis.ui.dashboard.weapon
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import ua.skarlet.gis.db.weapon.Weapon
+import ua.skarlet.gis.repo.WeaponRepository
+import ua.skarlet.gis.ui.BaseViewModel
 
-class WeaponsViewModel : ViewModel() {
+class WeaponsViewModel : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Weapons Fragment"
+    private val repo = WeaponRepository(viewModelScope, db.weaponDao())
+
+    val weapons: LiveData<List<Weapon>> = repo.getAll()
+
+    fun removeItem(position: Int) {
+        repo.delete(weapons.value!![position])
     }
-    val text: LiveData<String> = _text
 }
